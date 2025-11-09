@@ -1,0 +1,45 @@
+[pyprland]
+plugins = ["scratchpads", "magnify"]
+
+
+#--- Скрэтчпады -----------------------------------------------------
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class scratch-term --session ~/.config/kitty/sessions/float.conf"
+class = "scratch-term"
+size = "80% 60%"
+margin = 56
+smart_focus = false
+lazy = true
+excludes = "*"
+
+[scratchpads.sysmon]
+animation = "fromTop"
+command = "kitty --class scratch-sysmon --session ~/.config/kitty/sessions/sysmon.conf"
+class = "scratch-sysmon"
+size = "80% 70%"
+margin = 56
+smart_focus = false
+lazy = true
+close_on_hide = true
+excludes = "*"
+
+[scratchpads.music]
+animation = "fromBottom"
+command = "spotify"
+class = "Spotify"
+size = "85% 90%"
+margin = 17
+smart_focus = false
+excludes = "*"
+
+[scratchpads.volume]
+animation = "fromTop"
+command = "pavucontrol -t 1"
+class = "org.pulseaudio.pavucontrol"
+size = "50% 50%"
+margin = 56
+smart_focus = false
+lazy = true
+close_on_hide = true
+excludes = "*"

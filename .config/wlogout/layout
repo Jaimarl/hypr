@@ -1,0 +1,20 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Выключить"
+}
+{
+    "label" : "suspend",
+    "action" : "hyprlock & systemctl suspend",
+    "text" : "Спящий режим"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Перезагрузить"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Заблокировать"
+}

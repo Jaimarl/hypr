@@ -1,0 +1,95 @@
+{
+    "layer": "top",
+    "margin-left": 3,
+    "margin-right": 3,
+    "margin-top": 3,
+    "modules-left": ["custom/arch", "hyprland/workspaces", "hyprland/workspaces#sp"],
+    "modules-center": ["custom/play-pause", "custom/backwards","custom/forward", "mpris"],
+    "modules-right": ["tray", "hyprland/language", "clock", "custom/power"],
+
+    
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "6": "1",
+            "7": "2",
+            "8": "3",
+            "9": "4",
+            "10": "5"
+        }
+    },
+    "hyprland/workspaces#sp": {
+        "format": "{icon}",
+        "show-special": true,
+        "all-outputs": true,
+        "format-icons": {
+            "communication": "",
+            "magic": ""
+        },
+        "ignore-workspaces": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+            "special:scratch_term", "special:scratch_sysmon",
+            "special:scratch_music", "special:scratch_volume"
+        ]
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 7
+    },
+
+
+    "custom/play-pause": {
+        "format": "{}",
+        "exec": "~/.config/waybar/player_status.sh p",
+        "exec-on-event": false,
+        "returt-type": "json",
+        "interval": 1,
+        "signal": 1,
+        "on-click": "playerctl play-pause -p spotify && pkill -RTMIN+1 waybar"
+    },
+    "custom/backwards": {
+        "format": "{}",
+        "exec": "~/.config/waybar/player_status.sh b",
+        "exec-on-event": false,
+        "returt-type": "json",
+        "interval": 1,
+        "signal": 1,
+        "on-click": "playerctl previous -p spotify && pkill -RTMIN+1 waybar"
+    },
+    "custom/forward": {
+        "format": "{}",
+        "exec": "~/.config/waybar/player_status.sh f",
+        "exec-on-event": false,
+        "returt-type": "json",
+        "interval": 1,
+        "signal": 1,
+        "on-click": "playerctl next -p spotify && pkill -RTMIN+1 waybar"
+    },
+    "mpris": {
+        "format": "{artist} — {title}",
+        "player": "spotify",
+        "on-click": "~/.config/hypr/scripts/close_special.sh && pypr toggle music",
+        "on-click-right": "",
+        "on-click-middle": "",
+        "tooltip": false
+    },
+
+
+    "hyprland/language": {
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+    "clock": {
+        "format": "{:L%A, %d %B  <span color=\"#cba6f7\">•</span>  %H:%M}",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout -n -b 2 -T 200 -B 200 -L 520 -R 544",
+        "tooltip": false
+    }
+}

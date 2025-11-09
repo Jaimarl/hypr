@@ -1,0 +1,51 @@
+[mgr]
+prepend_keymap = [
+    # Сортировка
+    { on = [ ",", "a" ], run = "sort alphabetical --reverse=no",                desc = " Алфавит " },
+	{ on = [ ",", "b" ], run = [ "sort btime --reverse=no", "linemode btime" ], desc = " Дата создания " },
+	{ on = [ ",", "e" ], run = "sort extension --reverse=no",                   desc = " Расширение " },
+	{ on = [ ",", "A" ], run = "sort alphabetical --reverse",                   desc = " Алфавит " },
+	{ on = [ ",", "B" ], run = [ "sort btime --reverse", "linemode btime" ],    desc = " Дата создания " },
+	{ on = [ ",", "E" ], run = "sort extension --reverse",                      desc = " Расширение " },
+	{ on = [ ",", "s" ], run = [ "sort size --reverse=no", "linemode size" ],   desc = " Размер " },
+	{ on = [ ",", "m" ], run = [ "sort mtime --reverse=no", "linemode mtime" ], desc = " Дата изменения " },
+	{ on = [ ",", "n" ], run = "sort natural --reverse=no",                     desc = " Естественная " },
+	{ on = [ ",", "S" ], run = [ "sort size --reverse", "linemode size" ],      desc = " Размер " },
+	{ on = [ ",", "M" ], run = [ "sort mtime --reverse", "linemode mtime" ],    desc = " Дата изменения " },
+	{ on = [ ",", "N" ], run = "sort natural --reverse",                        desc = " Естественная " },
+	{ on = [ ",", "r" ], run = "noop" },
+
+    # Информация
+	{ on = [ "m", "s" ], run = "linemode size",        desc = "󰌕 Размер" },
+	{ on = [ "m", "m" ], run = "linemode mtime",       desc = "󰌕 Дата изменения" },
+	{ on = [ "m", "o" ], run = "linemode owner",       desc = "󰌕 Владелец" },
+	{ on = [ "m", "p" ], run = "linemode permissions", desc = "󰌕 Разрешения" },
+	{ on = [ "m", "b" ], run = "linemode btime",       desc = "󰌕 Дата создания" },
+	{ on = [ "m", "n" ], run = "linemode none",        desc = "󰌕 Ничего" },
+
+    # Копировать
+	{ on = [ "c", "c" ], run = "copy path",             desc = " Путь к файлу" },
+	{ on = [ "c", "d" ], run = "copy dirname",          desc = " Путь к директории" },
+	{ on = [ "c", "f" ], run = "copy filename",         desc = " Название файла" },
+	{ on = [ "c", "s" ], run = "plugin wl-clipboard",   desc = " Буфер обмена" },
+	{ on = [ "c", "t" ], run = "plugin copy-file-contents",   desc = " Содержимое" },
+	{ on = [ "c", "n" ], run = "noop" },
+
+    # Перейти
+    { on = [ "g", "h" ],       run = "cd ~",             desc = " /home" },
+	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = " ~/.config" },
+	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = " ~/Downloads" },
+	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = " Перейти к" },
+	{ on = [ "g", "f" ],       run = "follow",           desc = " Выбранный симлинк" },
+	{ on = [ "g", "g" ], run = "noop" },
+
+    # Корзина
+    { on = ["R","o"], run = "plugin recycle-bin -- open",        desc = " Открыть корзину" },
+    { on = ["R","d"], run = "plugin recycle-bin -- delete",      desc = " Удалить" },
+    { on = ["R","D"], run = "plugin recycle-bin -- emptyDays",   desc = " Удалять через" },
+    { on = ["R","e"], run = "plugin recycle-bin -- empty",       desc = "󰧧 Очистить корзину" },
+    { on = ["R","r"], run = "plugin recycle-bin -- restore",     desc = " Восстановить" },
+
+    # Архивировать
+    { on = ["C"], run = "plugin compress" }
+]

@@ -1,0 +1,57 @@
+@import "colors.css";
+
+* {
+	font-family: "SF Pro Display";
+	font-weight: 500;
+	font-size: 18;
+	box-shadow: none;
+}
+
+window {
+	background-image: image(url("./background.png"));
+	background-position: center;
+	background-size: cover;
+}
+
+button {
+	margin: 5px;
+    border-radius: 10px;
+	background-size: 25%;
+	transition: none;
+	color: @mauve;
+	background-color: @surface0;
+}
+
+button:focus, button:active, button:hover {
+	color: @mantle;
+	background-color: @mauve;
+}
+
+
+#shutdown {
+  	background-image: image(url("./icons/shutdown_inactive.png"));
+}
+#shutdown:focus, #shutdown:active, #shutdown:hover {
+  	background-image: image(url("./icons/shutdown_active.png"));
+}
+
+#reboot {
+  	background-image: image(url("./icons/reboot_inactive.png"));
+}
+#reboot:focus, #reboot:active, #reboot:hover {
+  	background-image: image(url("./icons/reboot_active.png"));
+}
+
+#suspend {
+  	background-image: image(url("./icons/sleep_inactive.png"));
+}
+#suspend:focus, #suspend:active, #suspend:hover{
+  	background-image: image(url("./icons/sleep_active.png"));
+}
+
+#lock {
+  	background-image: image(url("./icons/lock_inactive.png"));
+}
+#lock:focus, #lock:active, #lock:hover{
+  	background-image: image(url("./icons/lock_active.png"));
+}

@@ -1,0 +1,39 @@
+mkdir -p ~/.cache/wallpaper
+
+case "$1" in
+    set)
+        WALLPAPER_PATH="$2"
+
+        if [ ! -f "$WALLPAPER_PATH" ]; then
+            echo "Файл '$WALLPAPER_PATH' не существует"
+            exit 1
+        fi
+
+        if ! file --mime-type "$WALLPAPER_PATH" | grep -q \ image/; then
+            echo "'$WALLPAPER_PATH' не является изображением"
+            exit 1
+        fi
+    ;;
+    random)
+        FILE=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+        CURRENT=$(readlink ~/.cache/wallpaper/current.png)
+
+        while [ "$CURRENT" == "$FILE" ]; do
+            FILE=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+        done
+
+        WALLPAPER_PATH="$FILE"
+    ;;
+    *)
+        echo "Не указан режим"
+        exit 1
+    ;;
+esac
+
+ln -sf "$WALLPAPER_PATH" ~/.cache/wallpaper/current.png
+
+swww img --transition-type grow --transition-pos 0.85,0.95 --transition-step 90 --transition-duration 1 --transition-fps 144 "$WALLPAPER_PATH"
+
+magick "$WALLPAPER_PATH" -blur 0x12 -level 8%,115%,1 ~/.cache/wallpaper/background.png
+ln -sf ~/.cache/wallpaper/background.png ~/.config/hypr/background.png
+ln -sf ~/.cache/wallpaper/background.png ~/.config/wlogout/background.png
