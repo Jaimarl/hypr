@@ -48,7 +48,8 @@
         "returt-type": "json",
         "interval": 1,
         "signal": 1,
-        "on-click": "playerctl play-pause -p spotify && pkill -RTMIN+1 waybar"
+        "on-click": "playerctl play-pause -p spotify && pkill -RTMIN+1 waybar",
+        "tooltip": false
     },
     "custom/backwards": {
         "format": "{}",
@@ -57,7 +58,8 @@
         "returt-type": "json",
         "interval": 1,
         "signal": 1,
-        "on-click": "playerctl previous -p spotify && pkill -RTMIN+1 waybar"
+        "on-click": "playerctl previous -p spotify && pkill -RTMIN+1 waybar",
+        "tooltip": false
     },
     "custom/forward": {
         "format": "{}",
@@ -66,7 +68,8 @@
         "returt-type": "json",
         "interval": 1,
         "signal": 1,
-        "on-click": "playerctl next -p spotify && pkill -RTMIN+1 waybar"
+        "on-click": "playerctl next -p spotify && pkill -RTMIN+1 waybar",
+        "tooltip": false
     },
     "mpris": {
         "format": "{artist} — {title}",

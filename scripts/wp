@@ -15,7 +15,7 @@ case "$1" in
         fi
     ;;
     random)
-        FILE=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+        FILE=$(find $(readlink ~/Pictures/Wallpapers) -type f | shuf -n 1)
         CURRENT=$(readlink ~/.cache/wallpaper/current.png)
 
         while [ "$CURRENT" == "$FILE" ]; do
@@ -34,6 +34,6 @@ ln -sf "$WALLPAPER_PATH" ~/.cache/wallpaper/current.png
 
 swww img --transition-type grow --transition-pos 0.85,0.95 --transition-step 90 --transition-duration 1 --transition-fps 144 "$WALLPAPER_PATH"
 
-magick "$WALLPAPER_PATH" -blur 0x12 -level 8%,115%,1 ~/.cache/wallpaper/background.png
-ln -sf ~/.cache/wallpaper/background.png ~/.config/hypr/background.png
-ln -sf ~/.cache/wallpaper/background.png ~/.config/wlogout/background.png
+magick "$WALLPAPER_PATH" -blur 0x12 -level 8%,115%,1 ~/.cache/wallpaper/blurred.png
+ln -sf ~/.cache/wallpaper/blurred.png ~/.config/hypr/background.png
+ln -sf ~/.cache/wallpaper/blurred.png ~/.config/wlogout/background.png
