@@ -74,7 +74,7 @@
     "mpris": {
         "format": "{artist} — {title}",
         "player": "spotify",
-        "on-click": "~/.config/hypr/scripts/close_special.sh && pypr toggle music",
+        "on-click": "~/.config/hypr/scripts/special_scratch.sh open-scratch music",
         "on-click-right": "",
         "on-click-middle": "",
         "tooltip": false

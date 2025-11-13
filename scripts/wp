@@ -19,7 +19,7 @@ case "$1" in
         CURRENT=$(readlink ~/.cache/wallpaper/current.png)
 
         while [ "$CURRENT" == "$FILE" ]; do
-            FILE=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+            FILE=$(find $(readlink ~/Pictures/Wallpapers) -type f | shuf -n 1)
         done
 
         WALLPAPER_PATH="$FILE"

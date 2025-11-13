@@ -20,4 +20,7 @@ for file in ./scripts/*; do
     ln -sf "$DOTFILES_PATH"/scripts/"$filename" ~/.local/bin
 done
 
+mkdir -p ~/.local/share/themes
+ln -sf "$DOTFILES_PATH"/other/catppuccin-mocha-mauve-standard+default ~/.local/share/themes
+
 wp random

@@ -7,10 +7,15 @@ fish_add_path ~/.local/bin
 
 #--- Алиасы ---------------------------------------------------------
 alias ff "clear && fastfetch"
-alias s "yay -Ss"
-alias i "sudo pacman -S"
-alias yi "yay -S"
 alias wpc "gowall convert -t catppuccin"
+
+# Pacman
+alias s "sudo pacman -S"
+alias ys "yay -S"
+alias syu "sudo pacman -Syu"
+alias r "sudo pacman -Rcns"
+alias ss "yay -Ss"
+alias q "pacman -Q | grep"
 
 
 #--- Функции --------------------------------------------------------
